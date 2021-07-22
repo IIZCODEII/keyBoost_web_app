@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import scipy.stats as st
 import statsmodels.api as sm
-import matplotlib
 from warnings import filterwarnings
 filterwarnings('ignore')
 from keyBoost.consensus.utils import deduplication
