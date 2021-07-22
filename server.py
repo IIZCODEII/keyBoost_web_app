@@ -2,7 +2,7 @@ import streamlit as stl
 import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
-from keyboost.keyBoost import *
+from keyBoost.keyBoost import *
 from PIL import Image
 import spacy
 
