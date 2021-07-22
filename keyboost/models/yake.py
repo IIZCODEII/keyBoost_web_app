@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import yake
-from keyBoost_lib.consensus.utils import score_transformation
+from keyBoost.consensus.utils import score_transformation
 
 def yake_extraction(text,
                       language,

@@ -3,7 +3,7 @@ import pandas as pd
 from keybert import KeyBERT
 from sklearn.metrics.pairwise import cosine_similarity
 from keybert.backend._utils import select_backend
-from keyBoost_lib.consensus.utils import score_transformation
+from keyBoost.consensus.utils import score_transformation
 
 def keybert_extraction(text,
                        keyphrases_ngram_max,

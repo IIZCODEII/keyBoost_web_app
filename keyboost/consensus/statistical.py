@@ -6,8 +6,8 @@ import statsmodels.api as sm
 import matplotlib
 from warnings import filterwarnings
 filterwarnings('ignore')
-from keyBoost_lib.consensus.utils import deduplication
-from keyBoost_lib.consensus.ranking import rank_consensus
+from keyBoost.consensus.utils import deduplication
+from keyBoost.consensus.ranking import rank_consensus
 
 
 # Allows to set an optimal scale for the histogram in terms of bins
@@ -189,8 +189,9 @@ def statistical_consensus(key_extractions,
             keywords = deduplication(key_rank=key_rank,
                   n_top=n_top,
                   transformers_model='distilbert-base-nli-mean-tokens')
+            result = pd.DataFrame(keywords,columns=['Keyword','Score'])
             print('Done !')
-            return keywords
+            return result
 
     else:
         print('Fallback to Rank Based Consensus')

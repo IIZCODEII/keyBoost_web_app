@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from gensim.summarization import keywords
-from keyBoost_lib.consensus.utils import score_transformation
+from keyBoost.consensus.utils import score_transformation
 
 def textrank_extraction(text,
                        n_top,
