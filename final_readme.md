@@ -3,15 +3,16 @@
 [![PyPI - PyPi](https://img.shields.io/pypi/v/keyBERT)](https://pypi.org/project/keybert/)
 [![Build](https://img.shields.io/github/workflow/status/MaartenGr/keyBERT/Code%20Checks/master)](https://pypi.org/project/keybert/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OxpgwKqSzODtO3vS7Xe1nEmZMCAIMckX?usp=sharing)
-+
-<img src="keyboost.png"/>
+
+
+<img src="keyboost.png" align = 'center'/>
 
 # KeyBoost
 
 KeyBoost is simple and easy-to-use keyword extraction tool that moves away the hassle of selecting the best models for your specific use-case. No background in the litterature of keyword extraction or expertise is needed to extract the best keywords.
 "Best" here refering to the context of no prior informations about the performances of the large gamut of keyword extraction models available in your use-case.
 
-KeyBoost has the structure of a *meta-model* that consolidates the keyword extractions from many models in a way that forms a global *consensus* on which are globally the best keywords.
+KeyBoost has the structure of a *meta-model* that consolidates the keyword extractions from many models in a way that forms a global *consensus* on which globally are the best keywords.
 
 A technical deep dive on the ins and outs of this architecture is availaible [here](https://towardsdatascience.com/keyword-extraction-with-bert-724efca412ea).
 
