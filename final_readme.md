@@ -36,7 +36,7 @@ A technical deep dive on the ins and outs of this architecture is availaible [he
 Although there are already many methods available for keyword generation
 (e.g.,
 [Rake](https://github.com/aneesha/RAKE),
-[YAKE!](https://github.com/LIAAD/yake), TF-IDF, etc.)
+, TF-IDF, etc.)
 I wanted to create a very basic, but powerful method for extracting keywords and keyphrases.
 This is where **KeyBERT** comes in! Which uses BERT-embeddings and simple cosine similarity
 to find the sub-phrases in a document that are the most similar to the document itself.
@@ -50,24 +50,18 @@ Wishing to apply keyword extraction to ecology-related administrative documents,
 
 This is where keyBoost comes in ...;
 
+Explains briefly how it works
+
++ flowchart
++ the 3 main sub-models keyboost is based upon [YAKE!](https://github.com/LIAAD/yake),
+keyBert and TextRANK and why ( diversity of techniques in order to potentially fit to the maximum cases possible + more or less best in their respective class + great implementation available)
+
++ references
 
 
+emphasizes the fact that you want an out of the box usable tool for general keyword extraction with the least compromise possible in the majority of cases.
 
 
-First, document embeddings are extracted with BERT to get a document-level representation.
-Then, word embeddings are extracted for N-gram words/phrases. Finally, we use cosine similarity
-to find the words/phrases that are the most similar to the document. The most similar words could
-then be identified as the words that best describe the entire document.  
-
-KeyBERT is by no means unique and is created as a quick and easy method
-for creating keywords and keyphrases. Although there are many great
-papers and solutions out there that use BERT-embeddings
-(e.g.,
-[1](https://github.com/pranav-ust/BERT-keyphrase-extraction),
-[2](https://github.com/ibatra/BERT-Keyword-Extractor),
-[3](https://www.preprints.org/manuscript/201908.0073/download/final_file),
-), I could not find a BERT-based solution that did not have to be trained from scratch and
-could be used for beginners (**correct me if I'm wrong!**).
 Thus, the goal was a `pip install keybert` and at most 3 lines of code in usage.   
 
 <a name="gettingstarted"/></a>
