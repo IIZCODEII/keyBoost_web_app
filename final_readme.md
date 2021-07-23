@@ -41,6 +41,19 @@ I wanted to create a very basic, but powerful method for extracting keywords and
 This is where **KeyBERT** comes in! Which uses BERT-embeddings and simple cosine similarity
 to find the sub-phrases in a document that are the most similar to the document itself.
 
+
+Wishing to apply keyword extraction to ecology-related administrative documents, I was confronted to the large breadth of available techniques making any kind of arbitrage between them frustrating for a number of reasons.
+
+* No labeling etc => no visibility on the real performance of theses algs for my use case
+* In the litterature => large amount of models that performs very differently from a use case ( corpus, style etc) to another
+* I didn't want to follow my guts and just randomly pick a model, => i wanted a rational and structured approach to deal with this incertainty.
+
+This is where keyBoost comes in ...;
+
+
+
+
+
 First, document embeddings are extracted with BERT to get a document-level representation.
 Then, word embeddings are extracted for N-gram words/phrases. Finally, we use cosine similarity
 to find the words/phrases that are the most similar to the document. The most similar words could
