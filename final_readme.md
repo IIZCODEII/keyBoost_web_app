@@ -4,8 +4,8 @@
 [![Build](https://img.shields.io/github/workflow/status/MaartenGr/keyBERT/Code%20Checks/master)](https://pypi.org/project/keybert/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OxpgwKqSzODtO3vS7Xe1nEmZMCAIMckX?usp=sharing)
 
+<p align = 'center'> <img src="keyboost.png"/> </p>
 
-<img src="keyboost.png" align = 'center'/>
 
 # KeyBoost
 
