@@ -4,12 +4,13 @@
 [![Build](https://img.shields.io/github/workflow/status/MaartenGr/keyBERT/Code%20Checks/master)](https://pypi.org/project/keybert/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OxpgwKqSzODtO3vS7Xe1nEmZMCAIMckX?usp=sharing)
 +
-<img src="images/logo.png" width="35%" height="35%" align="right" />
+<img src="keyboost.png" width="35%" height="35%" align="center" />
 
-# KeyBERT
+# KeyBoost
 
-KeyBERT is a minimal and easy-to-use keyword extraction technique that leverages BERT embeddings to
-create keywords and keyphrases that are most similar to a document.
+k is a minimal and easy-to-use keyword extraction technique that leverages BERT embeddings to create keywords and keyphrases that are most similar to a document.
+
+KeyBoost is simple and easy-to-use keyword extraction tool that moves away the hassle of selecting the best models for your specific use-case. No background in the litterature of keyword extraction or expertise is needed to extract the best keywords in the context of no prior information about the performances of the large gamut of keyword extraction models available.
 
 Corresponding medium post can be found [here](https://towardsdatascience.com/keyword-extraction-with-bert-724efca412ea).
 
