@@ -34,7 +34,7 @@ initial_text = """
       """
 
 
-keyboost = KeyBoost(transformers_model='distilbert-base-nli-mean-tokens')
+keyboost = KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
 
 language = stl.selectbox(label='Quelle est la langue du texte ?',
                           options =['fr','en'])
