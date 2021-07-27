@@ -21,23 +21,23 @@ with col3:
     stl.write("")
 
 initial_text = """
-         Supervised learning is the machine learning task of learning a function that
-         maps an input to an output based on example input-output pairs.[1] It infers a
-         function from labeled training data consisting of a set of training examples.[2]
-         In supervised learning, each example is a pair consisting of an input object
-         (typically a vector) and a desired output value (also called the supervisory signal).
-         A supervised learning algorithm analyzes the training data and produces an inferred function,
-         which can be used for mapping new examples. An optimal scenario will allow for the
-         algorithm to correctly determine the class labels for unseen instances. This requires
-         the learning algorithm to generalize from the training data to unseen situations in a
-         'reasonable' way (see inductive bias).
+         L'apprentissage supervisé est la tâche d'apprentissage automatique consistant à apprendre une fonction qui
+          mappe une entrée à une sortie sur la base d'exemples de paires entrée-sortie.[1] Il en déduit un
+          fonction à partir de données d'apprentissage étiquetées consistant en un ensemble d'exemples d'apprentissage.[2]
+          En apprentissage supervisé, chaque exemple est une paire constituée d'un objet d'entrée
+          (généralement un vecteur) et une valeur de sortie souhaitée (également appelée signal de supervision).
+          Un algorithme d'apprentissage supervisé analyse les données d'apprentissage et produit une fonction inférée,
+          qui peut être utilisé pour mapper de nouveaux exemples. Un scénario optimal permettra à
+          algorithme de déterminer correctement les étiquettes de classe pour les instances invisibles. Cela nécessite
+          l'algorithme d'apprentissage pour généraliser à partir des données d'entraînement à des situations invisibles dans un
+          manière « raisonnable » (voir biais inductif).
       """
 
 
 keyboost = KeyBoost(transformers_model='distilbert-base-nli-mean-tokens')
 
-language = stl.selectbox(label='What is the language of the text ?',
-                          options =['en','fr'])
+language = stl.selectbox(label='Quelle est la langue du texte ?',
+                          options =['fr','en'])
 
 
 if language == 'en':
@@ -54,29 +54,29 @@ elif language == 'fr':
 
 
 
-selected_models = stl.multiselect(label='What are the underlying extraction models you want to use ?',
+selected_models = stl.multiselect(label="Quels sont les modèles d'extraction sous-jacents que vous souhaitez utiliser ?",
                           default=['yake','textrank','keybert'],
                           options =['yake','textrank','keybert'])
 
 
-selected_consensus = stl.selectbox(label='What kind of consensus do you want to be performed ?',
+selected_consensus = stl.selectbox(label='Quel type de consensus voulez-vous effectuer ?',
                           options =['statistical','rank'])
 
 
-txt = stl.text_area(label='Text to analyze',
+txt = stl.text_area(label='Texte à analyser',
                    value=initial_text,
                    height=350)
 
-n_top = stl.slider(label='How many keywords at most do you want to extract ?',
+n_top = stl.slider(label='Combien de mots-clés au maximum voulez-vous extraire ?',
                         min_value=1,max_value=10,value=5)
 
 
 
 
 
-with stl.spinner(text='Wait for it...'):
+with stl.spinner(text='Veuillez patienter...'):
     if txt == '':
-        stl.info('Please input some text in the dedicated area')
+        stl.info('Veuillez saisir du texte dans la zone dédiée')
 
     else:
 
