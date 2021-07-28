@@ -75,7 +75,7 @@ n_top = stl.slider(label='Combien de mots-clés au maximum voulez-vous extraire 
 
 
 with stl.spinner(text='Veuillez patienter...'):
-    if txt == '':
+    if txt == '' or len(selected_consensus)==0:
         stl.info('Veuillez saisir du texte dans la zone dédiée')
 
     else:
