@@ -130,9 +130,9 @@ with stl.spinner(text='Veuillez patienter...'):
             mkd = ''
             for k in keywords:
                 mkd+='''<p style='{}'>{}</p>'''.format(css,k)
+
+            stl.markdown(mkd,unsafe_allow_html=True)
+
         except Exception as e:
 
             stl.info('Veuillez réessayer')
-
-
-        stl.markdown(mkd,unsafe_allow_html=True)
