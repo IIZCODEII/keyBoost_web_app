@@ -93,45 +93,46 @@ with stl.spinner(text='Veuillez patienter...'):
                                    stopwords=stopwords,
                                    models = selected_models,
                                    consensus = selected_consensus)
+
+
+            if 'textrank' in selected_models:
+               keywords = [k for k in keywords if k not in stopwords]
+
+            css = '''text-transform: lowercase;
+            	background: linear-gradient(to right, #acb4fc 0%, #6fd4fc 100%);
+            	-webkit-text-fill-color: white;
+            	display: inline-block;
+                padding: 3px 3px;
+                margin: 5px 5px;'''
+
+            # maybe adding the score feature later
+            # if keyboost.is_statistical_consensus_completed:
+            #     mkds = ''
+            #
+            #
+            #
+            #
+            #     css_confidence = '''text-transform: lowercase;
+            #     	background: black
+            #     	-webkit-text-fill-color: white;
+            #     	display: inline-block;
+            #         padding: 3px 3px;
+            #         margin: 5px 5px;'''
+            #
+            #     max_score = keyboost.statistical_consensus_scores['Score'].max()
+            #
+            #     for k,s in keyboost.statistical_consensus_scores.values:
+            #         print(k,s)
+            #         mkds+='''<p style='{}'>{} (score:{})</p>'''.format(css,k,round(s/max_score*100,2))
+            #     stl.markdown(mkds,unsafe_allow_html=True)
+            # else:
+
+            mkd = ''
+            for k in keywords:
+                mkd+='''<p style='{}'>{}</p>'''.format(css,k)
         except Exception as e:
 
             stl.info('Veuillez réessayer')
 
-
-        if 'textrank' in selected_models:
-           keywords = [k for k in keywords if k not in stopwords]
-
-        css = '''text-transform: lowercase;
-        	background: linear-gradient(to right, #acb4fc 0%, #6fd4fc 100%);
-        	-webkit-text-fill-color: white;
-        	display: inline-block;
-            padding: 3px 3px;
-            margin: 5px 5px;'''
-
-        # maybe adding the score feature later
-        # if keyboost.is_statistical_consensus_completed:
-        #     mkds = ''
-        #
-        #
-        #
-        #
-        #     css_confidence = '''text-transform: lowercase;
-        #     	background: black
-        #     	-webkit-text-fill-color: white;
-        #     	display: inline-block;
-        #         padding: 3px 3px;
-        #         margin: 5px 5px;'''
-        #
-        #     max_score = keyboost.statistical_consensus_scores['Score'].max()
-        #
-        #     for k,s in keyboost.statistical_consensus_scores.values:
-        #         print(k,s)
-        #         mkds+='''<p style='{}'>{} (score:{})</p>'''.format(css,k,round(s/max_score*100,2))
-        #     stl.markdown(mkds,unsafe_allow_html=True)
-        # else:
-
-        mkd = ''
-        for k in keywords:
-            mkd+='''<p style='{}'>{}</p>'''.format(css,k)
 
         stl.markdown(mkd,unsafe_allow_html=True)
