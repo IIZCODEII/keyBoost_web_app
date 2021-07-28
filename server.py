@@ -78,7 +78,7 @@ with stl.spinner(text='Veuillez patienter...'):
     if txt == '' :
         stl.info('Veuillez saisir du texte dans la zone dédiée')
     elif len(selected_models)==0 :
-        stl.info('Veuillez selectionnerau moins un sous-modèle')
+        stl.info('Veuillez selectionner au moins un sous-modèle')
 
 
 
