@@ -86,13 +86,13 @@ with stl.spinner(text='Veuillez patienter...'):
 
         try:
 
-        keywords = keyboost.extract_keywords(text=txt,
-                               language=language,
-                               n_top=n_top,
-                               keyphrases_ngram_max=2,
-                               stopwords=stopwords,
-                               models = selected_models,
-                               consensus = selected_consensus)
+            keywords = keyboost.extract_keywords(text=txt,
+                                   language=language,
+                                   n_top=n_top,
+                                   keyphrases_ngram_max=2,
+                                   stopwords=stopwords,
+                                   models = selected_models,
+                                   consensus = selected_consensus)
        except Exception as e:
 
            stl.info('Veuillez réessayer')
