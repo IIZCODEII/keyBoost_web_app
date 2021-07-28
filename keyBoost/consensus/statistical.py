@@ -27,6 +27,8 @@ def freedman_diaconis_rule(data):
 def maximum_likelyhood_estimation(data,
                                   distribution):
 
+    data = np.array(data, dtype=float)
+
     params = distribution.fit(data)
 
     arg = params[:-2] # distribution parameter vector
