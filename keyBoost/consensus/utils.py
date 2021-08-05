@@ -2,7 +2,11 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from keybert.backend._utils import select_backend
+import streamlit as stl
 
+@stl.cache(allow_output_mutation=True)
+def backend_model(transformers_model):
+    return select_backend(transformers_model)
 
 def score_transformation(score,kind):
 
@@ -15,7 +19,7 @@ def score_transformation(score,kind):
 
 
 def deduplication(key_rank,n_top,transformers_model,tresh=0.9):
-  model = select_backend(transformers_model)
+  model = backend_model(transformers_model)
 
   keywords = [(key_rank.values[0][0],key_rank.values[0][1])]
 
