@@ -6,6 +6,10 @@ from keyBoost.keyBoost import *
 from PIL import Image
 import spacy
 
+@stl.cache
+def load_keyboost():
+    return KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
+
 image = Image.open('keyboost.png')
 
 
@@ -34,7 +38,7 @@ initial_text = """
       """
 
 
-keyboost = KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
+keyboost = load_keyboost()
 
 language = stl.selectbox(label='Quelle est la langue du texte ?',
                           options =['fr','en'])
