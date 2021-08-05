@@ -6,7 +6,7 @@ from keyBoost.keyBoost import *
 from PIL import Image
 import spacy
 
-@stl.cache
+@stl.cache(allow_output_mutation=True)
 def load_keyboost():
     return KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
 
