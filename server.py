@@ -31,7 +31,7 @@ def load_stopwors(language):
 image = Image.open('keyboost.png')
 
 
-col1, col2, col3 = stl.beta_columns([6,12,1])
+col1, col2, col3 = stl.columns([6,12,1])
 
 with col1:
     stl.write("")
