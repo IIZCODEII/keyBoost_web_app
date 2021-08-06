@@ -189,7 +189,7 @@ def statistical_consensus(key_extractions,
             print('Deduplication')
             keywords = deduplication(key_rank=key_rank,
                   n_top=n_top,
-                  transformers_model='distilbert-base-nli-mean-tokens')
+                  transformers_model=transformers_model)
             result = pd.DataFrame(keywords,columns=['Keyword','Score'])
             print('Done !')
             return result
