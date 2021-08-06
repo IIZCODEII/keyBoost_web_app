@@ -27,6 +27,21 @@ def load_stopwors(language):
 
     return stopwords
 
+@stl.cache(allow_output_mutation=True)
+def key_extraction(keyboost,
+                   language,
+                   n_top,
+                   stopwords,
+                   selected_models,
+                   selected_consensus):
+    return keyboost.extract_keywords(text=txt,
+                           language=language,
+                           n_top=n_top,
+                           keyphrases_ngram_max=2,
+                           stopwords=stopwords,
+                           models = selected_models,
+                           consensus = selected_consensus)
+
 
 image = Image.open('keyboost.png')
 
@@ -95,13 +110,12 @@ with stl.spinner(text='Veuillez patienter...'):
 
         try:
 
-            keywords = keyboost.extract_keywords(text=txt,
-                                   language=language,
-                                   n_top=n_top,
-                                   keyphrases_ngram_max=2,
-                                   stopwords=stopwords,
-                                   models = selected_models,
-                                   consensus = selected_consensus)
+            keywords = key_extraction(keyboost,
+                               language,
+                               n_top,
+                               stopwords,
+                               selected_models,
+                               selected_consensus)
 
 
             if 'textrank' in selected_models:

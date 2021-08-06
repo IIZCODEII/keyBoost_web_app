@@ -141,7 +141,7 @@ def extract_rank(scores):
 
 def statistical_consensus(key_extractions,
                           n_top,
-                          transformers_model='distilbert-base-nli-mean-tokens',
+                          transformers_model='paraphrase-MiniLM-L6-v2',
                           alpha_ks=0.0):
 
     discriminative_statistical_models = [st.powerlaw,st.gamma,st.pareto,st.powerlognorm]
