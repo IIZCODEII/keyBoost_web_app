@@ -10,6 +10,24 @@ import spacy
 def load_keyboost():
     return KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
 
+@stl.cache(allow_output_mutation=True)
+def load_stopwors(language):
+
+    if language == 'en':
+
+        nlp = spacy.load('en_core_web_sm')
+        stopwords = nlp.Defaults.stop_words
+
+
+
+    elif language == 'fr':
+
+        nlp = spacy.load('fr_core_news_sm')
+        stopwords = nlp.Defaults.stop_words
+
+    return stopwords
+
+
 image = Image.open('keyboost.png')
 
 
@@ -44,19 +62,6 @@ language = stl.selectbox(label='Quelle est la langue du texte ?',
                           options =['fr','en'])
 
 
-if language == 'en':
-
-    nlp = spacy.load('en_core_web_sm')
-    stopwords = nlp.Defaults.stop_words
-
-
-
-elif language == 'fr':
-
-    nlp = spacy.load('fr_core_news_sm')
-    stopwords = nlp.Defaults.stop_words
-
-
 
 selected_models = stl.multiselect(label="Quels sont les modèles d'extraction sous-jacents que vous souhaitez utiliser ?",
                           default=['yake','textrank','keybert'],
@@ -74,7 +79,7 @@ txt = stl.text_area(label='Texte à analyser',
 n_top = stl.slider(label='Combien de mots-clés au maximum voulez-vous extraire ?',
                         min_value=1,max_value=10,value=5)
 
-
+stopwords =  load_stopwors(language)
 
 
 
