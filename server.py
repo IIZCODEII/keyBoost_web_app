@@ -6,11 +6,11 @@ from keyBoost.keyBoost import *
 from PIL import Image
 import spacy
 
-@stl.cache(allow_output_mutation=True)
+@stl.cache(allow_output_mutation=True,ttl=600)
 def load_keyboost():
     return KeyBoost(transformers_model='paraphrase-MiniLM-L6-v2')
 
-@stl.cache(allow_output_mutation=True)
+@stl.cache(allow_output_mutation=True,ttl=600)
 def load_stopwors(language):
 
     if language == 'en':
@@ -27,7 +27,7 @@ def load_stopwors(language):
 
     return stopwords
 
-@stl.cache(allow_output_mutation=True)
+@stl.cache(allow_output_mutation=True,ttl=600)
 def key_extraction(keyboost,
                    language,
                    n_top,
